@@ -2,7 +2,8 @@ import allure
 import pytest
 from fueltrack.config.base_test import BaseTest
 
-
+@allure.epic("Administration")
+@allure.feature("Users")
 class TestUsers(BaseTest):
 
     @pytest.mark.users
