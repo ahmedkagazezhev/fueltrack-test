@@ -1,5 +1,5 @@
 
-HOST = "https://fueltrack-production-f193.up.railway.app/"
+HOST = "https://fueltrack-production-f193.up.railway.app"
 
 class Endpoint:
 

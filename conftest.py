@@ -2,7 +2,7 @@ import pytest
 import requests
 
 
-HOST = "https://fueltrack-production-f193.up.railway.app/"
+HOST = "https://fueltrack-production-f193.up.railway.app"
 
 @pytest.fixture(autouse=True,scope="session")
 def init_environment():

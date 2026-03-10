@@ -1,0 +1,10 @@
+{
+    "profiles": [
+        {
+            "profile_name": "main",
+            "goal": "loss",
+            "daily_calories": 2298,
+            "name": "\u0410\u0434\u0438\u043c"
+        }
+    ]
+}
