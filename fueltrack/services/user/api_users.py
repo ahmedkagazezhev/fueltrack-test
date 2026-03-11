@@ -34,16 +34,16 @@ class UserApi(Helper):
         return model.profiles
 
     @allure.step("Dalete user")
-    def delete_tg_id_user(self):
-        response = requests.delete(url = self.endpoint.delete_tg_id_user)
+    def delete_tg_id_user(self,tg_id,profile_name):
+        response = requests.delete(url = self.endpoint.delete_tg_id_user(tg_id,profile_name))
         assert response.status_code == 200 , response.json()
         self.attach_response(response.json())
         model = DeleteUser(**response.json())
         return model
 
     @allure.step("Get tg id and profile name user")
-    def get_tg_id_profile_name_user(self):
-        response = requests.get(url = self.endpoint.get_tg_id_profile_name_user)
+    def get_tg_id_profile_name_user(self,tg_id,profile_name):
+        response = requests.get(url = self.endpoint.get_tg_id_profile_name_user(tg_id,profile_name))
         assert response.status_code == 200 , response.json()
         self.attach_response(response.json())
         model = UserProfileResponse(**response.json())

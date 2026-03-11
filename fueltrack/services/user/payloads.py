@@ -7,7 +7,7 @@ class Payload:
     create_user = {
         "tg_id": 123456789,
         "name": "Адим",
-        "profile_name": "main",
+        "profile_name": "test",
         "gender": "male",
         "age": 25,
         "height": 180,

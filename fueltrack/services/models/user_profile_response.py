@@ -1,5 +1,5 @@
 from pydantic import BaseModel, field_validator
-import datetime
+from datetime import datetime
 
 class UserProfileResponse(BaseModel):
     tg_id: int
