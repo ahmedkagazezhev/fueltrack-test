@@ -48,3 +48,8 @@ class UserApi(Helper):
         self.attach_response(response.json())
         model = UserProfileResponse(**response.json())
         return model
+
+    def create_user_raw(self,payload):
+        response = requests.post(url=self.endpoint.create_user,json=payload)
+        self.attach_response(response.json())
+        return response

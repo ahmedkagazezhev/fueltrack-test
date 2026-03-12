@@ -16,3 +16,9 @@ def create_user():
     user = api.create_user()
     yield user
     api.delete_tg_id_user(user.tg_id,user.profile_name)
+
+@pytest.fixture()
+def create_user_for_delete():
+    api = UserApi()
+    user = api.create_user()
+    yield user
