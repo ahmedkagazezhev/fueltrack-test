@@ -105,5 +105,4 @@ class TestUsers(BaseTest):
     @pytest.mark.parametrize("payloads",PayloadWorkOut().negative_get_workout_history)
     def test_negative_get_workout_history(self,payloads):
         result = self.api_workout.negative_get_workout_history(payloads)
-        print(result.status_code, result.text)
         assert result.status_code == 400
