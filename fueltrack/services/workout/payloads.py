@@ -4,7 +4,7 @@ class PayloadWorkOut:
         "tg_id": 123456789,
         "profile_name": "test",
         "exercise": "Жим лёжа",
-        "weight_kg": "80",
+        "weight_kg": 80,
         "sets": 3,
         "reps": 10
     }
