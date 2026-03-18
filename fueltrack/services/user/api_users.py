@@ -2,11 +2,11 @@ import requests
 import allure
 from fueltrack.utils.helper import Helper
 from fueltrack.services.user.payloads import Payload
-from fueltrack.services.user.endpoints import Endpoint
-from fueltrack.services.models.create_user_model import CreateUserResponse
-from fueltrack.services.models.profile_summary import ProfileSummaryResponse
-from fueltrack.services.models.user_profile_response import UserProfileResponse
-from fueltrack.services.models.delete_user import DeleteUser
+from fueltrack.services.user.endpoints import EndpointUser
+from fueltrack.services.models.user.create_user_model import CreateUserResponse
+from fueltrack.services.models.user.profile_summary import ProfileSummaryResponse
+from fueltrack.services.models.user.user_profile_response import UserProfileResponse
+from fueltrack.services.models.user.delete_user import DeleteUser
 
 
 class UserApi(Helper):
@@ -14,7 +14,7 @@ class UserApi(Helper):
     def __init__(self):
         super().__init__()
         self.payload = Payload()
-        self.endpoint = Endpoint()
+        self.endpoint = EndpointUser()
 
     @allure.step("Create user")
     def create_user(self):
@@ -52,4 +52,5 @@ class UserApi(Helper):
     def create_user_raw(self,payload):
         response = requests.post(url=self.endpoint.create_user,json=payload)
         self.attach_response(response.json())
-        return response
+        model = CreateUserResponse(**response.json())
+        return model.user

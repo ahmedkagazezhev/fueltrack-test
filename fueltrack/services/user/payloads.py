@@ -16,10 +16,12 @@ class Payload:
         "activity": "medium"
     }
 
+    NEGATIVE_TG_ID = 987654321
+
     negative_payloads = [
         {**create_user, "tg_id": 0},
         {**create_user, "tg_id": -10},
-        {**create_user, "profile_name": "helicopter20000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"},
-        {**create_user, "profile_name": ""},
-        {**create_user, "profile_name": " "},
+        {**create_user, "tg_id": NEGATIVE_TG_ID, "profile_name": "helicopter000..."},
+        {**create_user, "tg_id": NEGATIVE_TG_ID, "profile_name": ""},
+        {**create_user, "tg_id": NEGATIVE_TG_ID, "profile_name": " "},
     ]

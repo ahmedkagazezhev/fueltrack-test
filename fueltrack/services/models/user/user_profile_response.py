@@ -28,7 +28,7 @@ class UserProfileResponse(BaseModel):
         return value
 
     @field_validator("tg_id")
-    def fields_profile_name_name_goal(cls,value):
+    def fields_tg_id(cls,value):
         if value <= 0:
             raise ValueError("tg_id must be positive")
         else:

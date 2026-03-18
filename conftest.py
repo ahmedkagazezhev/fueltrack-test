@@ -10,7 +10,7 @@ def init_environment():
     response = requests.get(url=f'{HOST}/health')
     assert response.status_code == 200
 
-@pytest.fixture()
+@pytest.fixture(scope="session")
 def create_user():
     api = UserApi()
     user = api.create_user()

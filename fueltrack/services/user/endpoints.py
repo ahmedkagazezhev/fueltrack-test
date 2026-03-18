@@ -1,7 +1,7 @@
 
 HOST = "https://fueltrack-production-f193.up.railway.app"
 
-class Endpoint:
+class EndpointUser:
 
     create_user = f'{HOST}/api/user/setup'
     get_tg_id_user = lambda self, tgId :f'{HOST}/api/user/{tgId}/profiles'

@@ -14,7 +14,7 @@ class ProfileSummary(BaseModel):
             return value
 
     @field_validator("daily_calories")
-    def fields_profile_name_name_goal(cls,value):
+    def fields_daily_calories(cls,value):
         if value <= 0:
             raise ValueError("Daily calories must be positive")
         else:
