@@ -12,7 +12,7 @@ class UserProfileResponse(BaseModel):
     goal: str
     activity: str
     daily_calories: int
-    created_at: str
+    created_at: datetime
 
     @field_validator("profile_name","name", "goal", "activity")
     def fields_profile_name_name_goal(cls,value):
@@ -64,11 +64,4 @@ class UserProfileResponse(BaseModel):
             raise ValueError("daily_calories must be positive")
         return value
 
-    @field_validator("created_at")
-    def created_at_is_valid(cls, value):
-        try:
-            datetime.fromisoformat(value.replace("Z", "+00:00"))
-        except ValueError:
-            raise ValueError("created_at must be valid ISO datetime")
-        return value
 

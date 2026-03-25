@@ -6,6 +6,7 @@ from fueltrack.services.user.endpoints import EndpointUser
 from fueltrack.services.models.user.create_user_model import CreateUserResponse
 from fueltrack.services.models.user.profile_summary import ProfileSummaryResponse
 from fueltrack.services.models.user.user_profile_response import UserProfileResponse
+from fueltrack.services.models.user.get_first_profile_user_model import GetFirstProfileUserMode
 from fueltrack.services.models.user.delete_user import DeleteUser
 
 
@@ -24,6 +25,13 @@ class UserApi(Helper):
         self.attach_response(response.json())
         model = CreateUserResponse(**response.json())
         return model.user
+
+    def get_first_profile_user(self,tg_id):
+        response = requests.get(url = self.endpoint.get_first_profile_user(tg_id))
+        assert response.status_code == 200 , response.json()
+        self.attach_response(response.json())
+        model = GetFirstProfileUserMode(**response.json())
+        return model
 
     @allure.step("Get tg id user")
     def get_tg_id_user(self,tg_id):

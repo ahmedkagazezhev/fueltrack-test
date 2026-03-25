@@ -1,7 +1,3 @@
-from faker import Faker
-
-fake = Faker()
-
 class Payload:
 
     create_user = {
